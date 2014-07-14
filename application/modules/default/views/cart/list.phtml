@@ -1,0 +1,26 @@
+<form action="/smartosc/FRESHER05/day4/default/cart/updatecart" method="post">
+<table border='1' cellspacing='0' cellpadding='0' width='500'>
+        <tr>
+            <td>Ten san pham</td>
+            <td>So luong</td>
+            <td>Gia</td>
+            <td>Thanh tien</td>
+            <td>Delete</td>
+        </tr>
+        <?php
+            if(isset($listCart) && $listCart != null ) {
+                foreach($listCart as $listCarts)
+                {
+                    echo "<tr>";
+                    echo "<td>".$listCarts['pro_name']."</td>";
+                    echo "<td><input type='text' name='number[".$listCarts['pro_id']."]' value='".$listCarts['soluong']."' /></td>";
+                    echo "<td>".$listCarts['pro_price']."</td>";
+                    echo "<td>".$listCarts['pro_price']*$listCarts['soluong']."</td>";
+                    echo "<td><a href='/smartosc/FRESHER05/day4/default/cart/deletecart/".$listCarts['pro_id']."'>Delete</a></td>";
+                    echo "</tr>";
+                }
+            }
+        ?>
+</table>
+<input type="submit" value="Update" name="btnok" /> 
+</form>

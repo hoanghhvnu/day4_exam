@@ -1,0 +1,21 @@
+<table border='1'>
+    <tr>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Address</td>
+        <td>Phone</td>
+        <td>Delete</td>
+    </tr>
+    <?php
+        foreach($listUser as $listUs){
+            echo "<tr>";
+            echo "<td>".$listUs['username']."</td>";
+            echo "<td>".$listUs['email']."</td>";
+            echo "<td>".$listUs['address']."</td>";
+            echo "<td>".$listUs['phone']."</td>";
+            echo "<td><a href='/smartosc/FRESHER05/day4/admin/user/delete/".$listUs['id']."'>Delete</a></td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<a href="/smartosc/FRESHER05/day4/admin/user/insert">Insert User</a>

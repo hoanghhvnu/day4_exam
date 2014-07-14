@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteRule ^([a-z]+).html$ /SmartOSC/FRESHER05/day4/demo.php [L]
+
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/([a-zA-Z]+)$ /SmartOSC/FRESHER05/day4/index.php?module=$1&controller=$2&action=$3 [L]
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/([a-zA-Z]+)/([0-9]+)$ /SmartOSC/FRESHER05/day4/index.php?module=$1&controller=$2&action=$3&id=$4 [L]
+
+
+
+
+
+

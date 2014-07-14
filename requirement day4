@@ -1,0 +1,10 @@
+requirement day4
+
+1.    Viết class pagination ( phân trang ) sử dụng được cho tất cả các controller
+        Class pagination đặt trong thư mực library trong thư mục application
+2.    Hãy viêt một class để load library: Ví dụ khi muốn gọi đến thư viện phân trang ta viết: $this->library(“library_name”);
+3.    Ứng dụng mô kiến thức về MVC hãy viết chức năng quản lý sinh viên với chức năng thêm sửa xóa
+        Bảng sinh viên: tbl_sinhvien(name,email,address,phone,gender,country)
+    a.    Chức năng insert: Kiểm tra dữ liệu nhập vào form. Khi thêm email không được trùng tên
+    b.    Chức năng danh sách sinh viên ( listSinhvien): Hiển thị phân trang. Mỗi trang có 5 sinh viên
+    c.    Hãy viết lại toàn bộ đường dẫn cho trang web

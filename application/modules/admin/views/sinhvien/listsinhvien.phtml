@@ -1,0 +1,26 @@
+<table border='1'>
+    <tr>
+        <td>name</td>
+        <td>Email</td>
+        <td>Address</td>
+        <td>Phone</td>
+        <td>Gender</td>
+        <td>Country</td>
+        <td>Delete</td>
+        <td>Edit</td>
+    </tr>
+    <?php
+        foreach($listSinhvien as $listSv){
+            echo "<tr>";
+            echo "<td>".$listSv['name']."</td>";
+            echo "<td>".$listSv['email']."</td>";
+            echo "<td>".$listSv['address']."</td>";
+            echo "<td>".$listSv['phone']."</td>";
+            echo "<td>".$listSv['gender']."</td>";
+            echo "<td>".$listSv['country']."</td>";
+            echo "<td><a href='/smartosc/FRESHER05/day4/admin/user/delete/".$listSv['id']."'>Delete</a></td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<a href="/smartosc/FRESHER05/day4/admin/user/insert">Insert User</a>
