@@ -1,7 +1,8 @@
 <?php
-    protected _limit = "";
-    protected _curPage = "";
-    protected _total = "";
+class pagination{
+    // protected _limit = "";
+    // protected _curPage = "";
+    // protected _total;
 
     function setLimit($value){
         return $this->_limit = $value;
@@ -30,3 +31,4 @@
     public function startPoint(){
         return ($this->_curPage - 1) * $this->_limit;
     }
+} // end class

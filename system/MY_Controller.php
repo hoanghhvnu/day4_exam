@@ -4,9 +4,13 @@ class MY_Controller
     protected $model;
     protected $library;
     public function loadView($url,$data = array()){
-        $module = isset($_REQUEST['module'])  && $_REQUEST['module'] != null ? $_REQUEST['module'] : "admin";
-        $controller = isset($_REQUEST['module'])  && $_REQUEST['controller'] != null ? $_REQUEST['controller'] : "index";
-        $url = "application/modules/$module/views/$url.phtml";
+        // $module = isset($_REQUEST['module'])  && $_REQUEST['module'] != null ? $_REQUEST['module'] : "default";
+        // $controller = isset($_REQUEST['module'])  && $_REQUEST['controller'] != null ? $_REQUEST['controller'] : "index";
+        // $url = "application/modules/$module/views/$url.phtml";
+        $url = "application/modules/default/views/$url.phtml";
+        // echo $url;
+       /* echo "<pre>";
+        print_r($data);*/
         foreach($data as $key=>$value)
         {
             $$key = $value;
@@ -20,8 +24,9 @@ class MY_Controller
         {
             return false;
         }
-        $module = isset($_REQUEST['module'])  && $_REQUEST['module'] != null ? $_REQUEST['module'] : "admin";
-        $url = "application/modules/$module/models/$model_name.php";
+        // $module = isset($_REQUEST['module'])  && $_REQUEST['module'] != null ? $_REQUEST['module'] : "admin";
+        // $url = "application/modules/$module/models/$model_name.php";
+        $url = "application/modules/default/models/$model_name.php";
         require_once($url);
         $this->model = new $model_name;
     }

@@ -58,6 +58,7 @@ class MY_Model extends database
             return false;
         }
         $sql = "SELECT {$this->getSelect()} FROM $table {$this->getWhere()} {$this->getOrder()} {$this->getLimit()}";
+        // echo "sql: " . $sql;
         $this->query($sql);
         return $this->fetchAll();
     }
@@ -95,9 +96,9 @@ class MY_Model extends database
     // chua test
     public function update($table_name, $data = array()){
          // $columnArr = array_keys($data);
-         $valueArr = array_values($data);
+         //$valueArr = array_values($data);
          $dataInsert = "";
-         foreach($valueArr as $key=>$value)
+         foreach($data as $key=>$value)
          {
              // $valueArr[$key] = '"'.$value.'"';
              $dataInsert[] = $key . "=" . '"' . $value . '"';

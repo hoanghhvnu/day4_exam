@@ -1,14 +1,14 @@
 <?php
 class sinhvien_model extends MY_Model{
-    protected $table = "tbl_sinhvien";
+    protected $_table = "tbl_sinhvien";
     public function listSinhvien()
     {
-        return $this->getAll($this->table);
+        return $this->getAll($this->_table);
     }
     public function detailSinhvien($id)
     {
         $this->setWhere("id = $id");
-        return $this->getOnce($this->table);
+        return $this->getOnce($this->_table);
     }
 
 

@@ -1,0 +1,27 @@
+<table border='1'>
+    <tr>
+        <th width = '200'>name</th>
+        <th width = '200'>Email</th>
+        <th width = '130'>Address</th>
+        <th width = '130'>Phone</th>
+        <th width = '20'>Gender</th>
+        <th width = '100'>Country</th>
+        <th width = '30'>Delete</th>
+        <th width = '30'>Edit</th>
+    </tr>
+    <?php
+        foreach($data as $listSv){
+            echo "<tr>";
+            echo "<td>".$listSv['name']."</td>";
+            echo "<td>".$listSv['email']."</td>";
+            echo "<td>".$listSv['address']."</td>";
+            echo "<td>".$listSv['phone']."</td>";
+            echo "<td>".$listSv['gender']."</td>";
+            echo "<td>".$listSv['country']."</td>";
+            echo "<td><a href='index.php?module=default&controller=sinhvien&action=delete&id=".$listSv['id']."'>Delete</a></td>";
+            echo "<td><a href='index.php?module=default&controller=sinhvien&action=update&id=".$listSv['id']."'>Edit</a></td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<a href="index.php?module=default&controller=sinhvien&action=insert">Insert Sinh vien</a>

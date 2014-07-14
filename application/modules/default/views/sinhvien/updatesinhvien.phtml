@@ -1,0 +1,65 @@
+<meta charset="utf-8" />
+<style>
+    label{
+        float: left;
+        width: 100px;
+    }
+    input{
+        margin-bottom: 5px;
+    }
+    .error{
+        color:red;
+    }
+</style>
+<?php
+    // $userInput = isset($data['user_input']) && $data['user_input'] != "" ? $data['user_input'] : "";
+    // echo "<pre>";
+    // print_r($data['user_input']);
+    $oldData = isset($data['cur_data']) && $data['cur_data'] != "" ? $data['cur_data'] : "";
+    // print_r($oldData);
+
+?>
+<form action="" method="post">
+    <label>Name</label>
+    <input type="text" name="txtname" value="<?php echo isset($oldData['name']) ? $oldData['name'] : "" ?>" />
+    <span class="error">
+        <?php echo isset($data['errorName']) ? $data['errorName'] : ""; ?>
+    </span>
+    <br />
+    <label>Email</label>
+    <input type="text" name="txtemail" value="<?php echo isset($oldData['email']) ? $oldData['email'] : "" ?>" />
+    <span class="error">
+        <?php echo isset($data['errorEmail']) ? $data['errorEmail'] : ""; ?>
+    </span>
+    <br />
+    <label>Address</label>
+    <input type="text" name="txtaddress" value="<?php echo isset($oldData['address']) ? $oldData['address'] : "" ?>" />
+    <span class="error">
+        <?php echo isset($data['errorAddress']) ? $data['errorAddress'] : ""; ?>
+    </span>
+    <br />
+    <label>Phone</label>
+    <input type="text" name="txtphone" value="<?php echo isset($oldData['phone']) ? $oldData['phone'] : "" ?>" />
+    <span class="error">
+        <?php echo isset($data['errorPhone']) ? $data['errorPhone'] : ""; ?>
+    </span>
+    <br />
+    <label>Country</label>
+    <input type="text" name="txtcountry" value="<?php echo isset($oldData['country']) ? $oldData['country'] : "" ?>" />
+    <span class="error">
+        <?php echo isset($data['errorCountry']) ? $data['errorCountry'] : ""; ?>
+    </span>
+    <br />
+    <label>Gender</label>
+    Male&nbsp;<input type="radio" name="gender" value="1"  <?php if( isset($oldData['gender']) && $oldData['gender'] == 1) echo "checked"  ?>/>
+    Famale&nbsp;<input type="radio" name="gender" value="2" <?php if( isset($oldData['gender']) && $oldData['gender'] != 1) echo "checked"  ?>/>
+    <span class="error">
+        <?php echo isset($data['errorGender']) ? $data['errorGender'] : ""; ?>
+    </span>
+    <br />
+    <label>&nbsp;</label>
+    
+    
+    <input type="submit" name="btnok" value="getInfo" />
+</form>
+    
